@@ -13,13 +13,18 @@ public class Compra {
     public Calendar getFechaCompra() {
         return fechaCompra;
     }
-    public void setFechaCompra(Calendar fechaCompra) {
-        this.fechaCompra = fechaCompra;
+    public void setFechaCompra(int dia, int mes, int anio) {
+        this.fechaCompra.set(anio, mes, dia);
     }
     public boolean isPagado() {
         return pagado;
     }
     public void setPagado(boolean pagado) {
         this.pagado = pagado;
+    }
+    public Compra(long codigoCompra,int dia, int mes, int anio, boolean pagado) {
+        this.setCodigoCompra(codigoCompra);
+        this.setFechaCompra(dia, mes, anio);
+        this.setPagado(pagado);
     }
 }

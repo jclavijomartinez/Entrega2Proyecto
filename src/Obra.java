@@ -36,5 +36,11 @@ public class Obra {
     public void setDimensiones(String dimensiones) {
         this.dimensiones = dimensiones;
     }
-    
+    public Obra(long codigoObra, String titulo, int dia, int mes, int anio,float precioRef,String dimensiones) {
+        this.setCodigoObra(codigoObra);
+        this.setTitulo(titulo);
+        this.setFecha(dia, mes, anio);
+        this.setPrecioRef(precioRef);
+        this.setDimensiones(dimensiones);
+    }
 }
