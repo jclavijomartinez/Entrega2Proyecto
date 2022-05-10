@@ -41,4 +41,12 @@ public class Cliente {
     public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
+    public Cliente(long codigoCliente, long cedula, String nombre, String apellidos, String direccionEntrega,long telefono) {
+        this.codigoCliente = codigoCliente;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccionEntrega = direccionEntrega;
+        this.telefono = telefono;
+    }
 }

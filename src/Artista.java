@@ -6,6 +6,14 @@ public class Artista {
     private String apellido;
     private Calendar fechaNacimiento = Calendar.getInstance();
     private long telefono;
+    public Artista(long codigoArtista, long cedula, String nombre, String apellido,int dia,int mes,int anio, long telefono) {
+        this.codigoArtista = codigoArtista;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.setFechaNacimiento(dia, mes, anio);
+        this.telefono = telefono;
+    }
     public long getCodigoArtista() {
         return codigoArtista;
     }
@@ -42,4 +50,5 @@ public class Artista {
     public void setFechaNacimiento(int dia, int mes, int anio) {
         this.fechaNacimiento.set(anio , mes, dia);
     }
+    
 }
