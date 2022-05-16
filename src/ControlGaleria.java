@@ -22,8 +22,8 @@ public class ControlGaleria {
                 String linea = lectura.nextLine(); //linea de encabezado
                 for (int i = 1; i < cantlin; i++) {
                     String lineai = lectura.nextLine();
-                    String[] contenidoObras = lineai.split("-");
-                    System.out.println(contenidoObras[i]);
+                    //lectura de obras
+                    System.out.println(lineai);
                 }
             } catch (FileNotFoundException e) { //excepcion del scanner
                 System.out.println("el archivo no existe revisa");

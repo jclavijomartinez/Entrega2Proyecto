@@ -1,10 +1,17 @@
 public class Cliente {
+    private Compra compraCliente;
     private long codigoCliente;
     private long cedula;
     private String nombre;
     private String apellidos;
     private String direccionEntrega;
     private long telefono;
+    public Compra getCompracliente() {
+        return compraCliente;
+    }
+    public void setCompracliente(Compra compracliente) {
+        this.compraCliente = compracliente;
+    }
     public long getCodigoCliente() {
         return codigoCliente;
     }
