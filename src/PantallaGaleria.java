@@ -1,12 +1,10 @@
 import java.util.*;
 public class PantallaGaleria {
-    private ControlGaleria galeria;
-
+    public ControlGaleria galeria = new ControlGaleria();
     public static void main(String[] args) {
         try (Scanner entrada = new Scanner(System.in)) {
             String ruta = "D:\\UNIVERSIDAD\\2210\\progaramacion avanzada\\ProytectoEntrega2\\ejemplodeinfo.txt";
-            ControlGaleria test1 = new ControlGaleria();
-            test1.leertxtyllenarobras(ruta);
+            galeria.leertxtyllenarobras(ruta); //no entiendo
             /*
             int opcion = 0;
             System.out.println("¡TE DAMOS LA BIENVENIDA A LA GALERÍA! estas son las opciones que puedes elegir");
