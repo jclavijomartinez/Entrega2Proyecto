@@ -9,6 +9,7 @@ public class ControlGaleria {
     // dato de tipo gestionobras para acceder a la creacion de artistas y obras
     GestionObras gestionobras = new GestionObras();
     // leer los datos del txt y agregarlos a la obra
+    GestionClientes gesticlientes = new GestionClientes();
     public void leertxtyllenarobras(String ruta) {
         File entradatxt = new File(ruta);
         try (FileReader fr = new FileReader(ruta)) {
