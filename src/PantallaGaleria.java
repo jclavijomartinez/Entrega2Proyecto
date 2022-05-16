@@ -1,7 +1,11 @@
 import java.util.*;
 public class PantallaGaleria {
+    private ControlGaleria galeria;
     public static void main(String[] args) {
         try (Scanner entrada = new Scanner(System.in)) {
+            String ruta = "D:\\UNIVERSIDAD\\2210\\progaramacion avanzada\\ProytectoEntrega2\\ejemplodeinfo.txt";
+            
+            /*
             int opcion = 0;
             System.out.println("¡TE DAMOS LA BIENVENIDA A LA GALERÍA! estas son las opciones que puedes elegir");
             System.out.println("1. leer datos desde archivo");
@@ -14,6 +18,7 @@ public class PantallaGaleria {
                 default:
                     System.out.println("no reconozco esa opcion");
                     break;
+            */
             }
         } catch (NoSuchElementException e) {
             System.out.println("problema con elemento");
