@@ -20,6 +20,7 @@ public class PantallaGaleria {
                     break;
 
                 case 3: 
+                
                     break;
                 default:
                     System.out.println("no reconozco esa opcion");
