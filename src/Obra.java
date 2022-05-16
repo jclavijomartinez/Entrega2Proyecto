@@ -1,6 +1,7 @@
 import java.util.Calendar;
 
 public class Obra {
+    private Compra compraObra;
     private long codigoObra;
     private String titulo;
     private Calendar fecha= Calendar.getInstance();
@@ -11,6 +12,12 @@ public class Obra {
     }
     public void setCodigoObra(long codigoObra) {
         this.codigoObra = codigoObra;
+    }
+    public Compra getCompraObra() {
+        return compraObra;
+    }
+    public void setCompraObra(Compra compraObra) {
+        this.compraObra = compraObra;
     }
     public String getTitulo() {
         return titulo;

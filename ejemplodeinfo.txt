@@ -1,5 +1,5 @@
 //ejemplo obra
-codigoObra - titulo - fecha - precioRef - dimensiones(cm)
+codigoObra - titulo - fecha - precioRef - dimensiones(cmxcm)
 000001 - Nuestra señora de fatima - 1963 - 15000000 - 158x60
 000002 - Las segadoras - 1895 - 35000000 - 200x160
 

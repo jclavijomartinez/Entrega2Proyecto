@@ -2,12 +2,16 @@ import java.io.*;
 import java.util.*;
 
 public class ControlGaleria {
-    //crear la coleccion de obras, se llama listaObras
-    private static ArrayList<Obra> listaObras; 
-    //crear la lista de artistas, se llama lista artistas
-    private static ArrayList<Artista> listaArtistas;
+    //crear la coleccion de obras, se llama listaDeObras
+    private static ArrayList<Obra> listaDeObras = new ArrayList<>(); 
+    //crear la lista de artistas, se llama listaDeArtistas
+    private static ArrayList<Artista> listaDeArtistas = new ArrayList<>();
+    //crear la lista de clientes, se llama listaDeClientes
+    private static ArrayList<Cliente> listaDeClientes = new ArrayList<>();
     // dato de tipo gestionobras para acceder a la creacion de artistas y obras
     GestionObras gestionobras = new GestionObras();
+    // dato de tipo gestionclientes para acceder a la creacion de clientes
+    GestionClientes gestionClientes = new GestionClientes();
     // leer los datos del txt y agregarlos a la obra
     GestionClientes gesticlientes = new GestionClientes();
     public void leertxtyllenarobras(String ruta) {
@@ -19,8 +23,8 @@ public class ControlGaleria {
                 String linea = lectura.nextLine(); //linea de encabezado
                 for (int i = 1; i < cantlin; i++) {
                     String lineai = lectura.nextLine();
-                    String[] contenidoObras = lineai.split("-");
-                    
+                    //lectura de obras
+                    System.out.println(lineai);
                 }
             } catch (FileNotFoundException e) { //excepcion del scanner
                 System.out.println("el archivo no existe revisa");
@@ -30,6 +34,12 @@ public class ControlGaleria {
         }
     }
     public void agregarObra(Obra nuevaobra) {
-        listaObras.add(nuevaobra);
+        listaDeObras.add(nuevaobra);
+    }
+    public void agregarArtista(Artista nuevoArtista) {
+        listaDeArtistas.add(nuevoArtista);
+    }
+    public void agregarClientes(Cliente nuevoCliente) {
+        listaDeClientes.add(nuevoCliente);
     }
 }

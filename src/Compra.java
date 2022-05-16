@@ -27,4 +27,5 @@ public class Compra {
         this.setFechaCompra(dia, mes, anio);
         this.setPagado(pagado);
     }
+  
 }
