@@ -1,17 +1,17 @@
 //ejemplo obra
-codigoObra - titulo - fecha - precioRef - dimensiones(cmxcm)
-000001 - Nuestra señora de fatima - 1963 - 15000000 - 158x60
+codigoObra (el codigo empieza con 0) - titulo - fecha - precioRef - dimensiones(cmxcm)
+//ejemplo artista
+codigoArtista (el codigo empieza con 1) - cedula - nombre - apellido - telefono -fechaNacimiento
+//ejemplo Cliente
+codigoCliente (el codigo empieza con 2) - cedula - nombre - apellidos - direccionEntrega - telefono
+//ejemplo compra 
+codigoCompra (el codigo empieza con 3) - fechaCompra - pagado
+000001 - Nuestra señora de fatima - 1963 - 15000000 - 158x60 - 100001 - 100372162 - Fernando - Botero - 3143268765 - 19/04/1932
 000002 - Las segadoras - 1895 - 35000000 - 200x160
 
-//ejemplo artista
-codigoArtista - cedula - nombre - apellido - telefono -fechaNacimiento
 100001 - 100372162 - Fernando - Botero - 3143268765 - 19/04/1932
 100002 - 100376710 - Pedro Nel - Gomez - 3143260312 - 04/07/1899
 
-//ejemplo Cliente
-codigoCliente - cedula - nombre - apellidos - direccionEntrega - telefono
 200001 - 100372162 - Martin - Alvares - carrera 3 #24-36 - 3143268765
 
-//ejemplo compra 
-codigoCompra - fechaCompra - pagado
 300001 - 22/04/2021 - True

@@ -20,11 +20,13 @@ public class ControlGaleria {
             try (Scanner lectura = new Scanner(entradatxt)) {
                 BufferedReader bf =new BufferedReader(fr);
                 Long cantlin = bf.lines().count();
-                String linea = lectura.nextLine(); //linea de encabezado
+                for (int i = 0; i < 9; i++) {
+                    lectura.nextLine(); //comentarios de 
+                }
                 for (int i = 1; i < cantlin; i++) {
-                    String lineai = lectura.nextLine();
-                    //lectura de obras
-                    System.out.println(lineai);
+                    String[] datos =lectura.nextLine().split("-");
+                    System.out.println(datos[0]);
+                    //llamar a llenarobras
                 }
             } catch (FileNotFoundException e) { //excepcion del scanner
                 System.out.println("el archivo no existe revisa");
@@ -47,5 +49,8 @@ public class ControlGaleria {
     }
     public ArrayList<Artista> getlistaartistas() {
         return listaDeArtistas;
+    }
+    public void llenarobras(String[] DATA) {
+        //recibir el string[] y procesar con los códigos para comparar y llenar las listas
     }
 }
