@@ -1,0 +1,313 @@
+                   Punto 3
+                    listadeartistas = galeria.getlistaartistas();
+                    int siesta = 0;
+                    int cont1 = 0;
+                    Long cantidadaDSinArtista = 0;
+                    long NumeroTempoSinArtista;
+                    Long cantidadaDConArtista = 0;
+                    long NumeroTempoConArtista; 
+                    // mostrar los artistas disp.
+                    for (Artista artistas : listadeartistas) {
+                        System.out.println("["+cont1+"]"+"nombre: " + artistas.getNombre() + " apellidos: " + artistas.getApellido()+ " cedula: " + artistas.getCedula());
+                        cont1++;
+                    }
+                    System.out.print("el artista que hizo la obra nueva está en esta lista? ");
+                     int siesta = entrada.nextint();
+                    if (siesta == 1) {
+                        try (Scanner nuevaobra = new Scanner(System.in)) {
+                            System.out.print("Dame el codigo de la nueva obra (EL CODIGO DEBE TENER 7 DIGITOS");
+                            Long codigoObraNuevaSinArtista= nuevaobra.nextLong();
+                            System.out.print("Dame el titulo de la nueva obra: ");
+                            String tituloObraNuevaSinArtista = nuevaobra.nextLine();
+                            System.out.print("Dame el dia de creacion de la nueva obra: ");
+                            int diaObraNuevaSinArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el mes de creacion de la nueva obra: ");
+                            int mesObraNuevaSinArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el year de creacion de la nueva obra: ");
+                            int yearObraNuevaSinArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el precio de la nueva obra: ");
+                            Float precioObraNuevaSinArtista = nuevaobra.nextFloat();
+                            System.out.print("Dame las dimensiones de la nueva obra: (altoxancho) ");
+                            String dimsObraNuevaSinArtista = nuevaobra.nextLine();
+                            // crear una nueva obra
+                            Obra obraAAgregar = new Obra(codigoObraNuevaSinArtista, tituloObraNuevaSinArtista, diaObraNuevaSinArtista, mesObraNuevaSinArtista,yearObraNuevaSinArtista, precioObraNuevaSinArtista, dimsObraNuevaSinArtista, 5, 1, 1, 1854, false);
+                            galeria.agregarObra(obraAAgregar);.
+                            //INTENTO DE VER LA CANTIDAD DE DIGITOS//
+                            long NumeroTempoSinArtista = codigoObraNuevaSinArtista;
+                            while(NumeroTempoSinArtista>0)
+                            {
+                                NumeroTempoSinArtista = NumeroTempoSinArtista/10;
+                                NumeroTempoSinArtista= NumeroTempoSinArtista%10;
+
+                                cantidadaDSinArtista++;       
+                            }
+                            System.out.println(codigoObraNuevaSinArtista+"tiene"+ cantidadaDSinArtista+ "DIGITOS")
+
+                            if(cantidadaDSinArtista==7)
+                            {
+                                System.out.println("Codigo aceptado");
+                            }
+                            else{
+                                System.out.println("El codigo tiene mas o menos numeros de los aceptados");
+                            }
+
+                            for (Artista artistas : listadeartistas) {
+                                if(codigoObraNuevaSinArtista == codigodearchivo)
+                                {
+
+                                }
+                        System.out.println("El codigo ya existe ");
+                        cont1++;
+                    }
+
+
+                        }catch (InputMismatchException  e) {
+                            System.out.println("revisa el dato que escribiste!");
+
+                    } else {
+                            System.out.println("Datos Artista: ");
+                            try (Scanner  nuevoartista  = new Scanner(System.in)) {
+                                        System.out.print("Dame el Codigo del artista: ");
+                                        String codigoArtista = nuevoartista.nextLine();
+                                        System.out.print("Dame la cedula del artista: ");
+                                        Long cedula= nuevoartista.nextLong(); 
+                                        System.out.print("Dame el Nombre del artista: ");
+                                        String nombre = nuevoartista.nextLine();
+                                        System.out.print("Dame el Apellido del artista: ");
+                                        String apellido = nuevoartista.nextLine();
+                                        System.out.print("Dame el dia de necimiento del artista ");
+                                        int dianac= nuevoartista.nextInt();
+                                        System.out.print("Dame el mes de necimiento del artista ");
+                                        int mesnac= nuevoartista.nextInt();
+                                        System.out.print("Dame el year de necimiento del artista ");
+                                        int ynac= nuevoartista.nextInt(); 
+                                        System.out.print("Dame el telefono del artista ");
+                                        Long tel= nuevoartista.nextLong();
+                                        Artista artistaAAgregar = new Artista(codigoArtista, cedula, nombre, apellido, dianac, mesnac, ynac, tel);
+                                        
+                                        System.out.println("Datos Obra con artista: ");    
+                                            try (Scanner nuevaobra = new Scanner(System.in)) {
+                            System.out.print("Dame el codigo de la nueva obra (EL CODIGO DEBE TENER 7 DIGITOS");
+                            Long codigoObraNuevaConArtista= nuevaobra.nextLong();
+                            System.out.print("Dame el titulo de la nueva obra: ");
+                            String tituloObraNuevaConArtista = nuevaobra.nextLine();
+                            System.out.print("Dame el dia de creacion de la nueva obra: ");
+                            int diaObraNuevaConArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el mes de creacion de la nueva obra: ");
+                            int mesObraNuevaConArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el year de creacion de la nueva obra: ");
+                            int yearObraNuevaConArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el precio de la nueva obra: ");
+                            Float precioObraNuevaConArtista = nuevaobra.nextFloat();
+                            System.out.print("Dame las dimensiones de la nueva obra: (altoxancho) ");
+                            String dimsObraNuevaConArtista = nuevaobra.nextLine();
+                            // crear una nueva obra
+                            Obra obraAAAgregar = new Obra(codigoObraNuevaConArtista, tituloObraNuevaConArtista, diaObraNuevaConArtista, mesObraNuevaConArtista,yearObraNuevaConArtista, precioObraNuevaConArtista, dimsObraNuevaConArtista, 5, 1, 1, 1854, false);
+                            galeria.agregarObra(obraAAAgregar);
+                            //INTENTO DE VER LA CANTIDAD DE DIGITOS//
+                            long NumeroTempoSinArtista = codigoObraNuevaSinArtista;
+                            while(NumeroTempoSinArtista>0)
+                            {
+                                NumeroTempoSinArtista = NumeroTempoSinArtista/10;
+                                cantidadaDSinArtista++;       
+                            }
+                            System.out.println(codigoObraNuevaSinArtista+"tiene"+ cantidadaDSinArtista+ "DIGITOS")
+
+                            if(cantidadaDSinArtista==7)
+                            {
+                                System.out.println("Codigo aceptado");
+                            }
+                            else{
+                                System.out.println("El codigo tiene mas o menos numeros de los aceptados");
+                            }
+
+                            for (Artista artistas : listadeartistas) {
+                                if(codigoObraNuevaSinArtista == codigodearchivo)
+                                {
+
+                                }
+                        System.out.println("El codigo ya existe ");
+                        cont1++;
+                        }catch (InputMismatchException  e) {
+                            System.out.println("revisa el dato que escribiste!");
+                        } 
+Punto 3
+/----------------------------/--------------------/--------------------------------------/------------------------/-----------------------/-----------------/---------------/-----------------/-----------------------/-----------------------/----------------------/
+
+
+
+
+
+
+Punto 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//punto 2....................................................................................................................//
+                         int escoje;
+                System.out.println("por que método quieres buscar?");
+                System.out.println("Titulo: 1");
+                System.out.println("Artista: 2");
+                System.out.println("Obra: 3");
+                escoje=escoje.nextInt;
+                
+                    
+                    case 1:
+
+                     GestionObras buscarobra= new GestionObras();
+                     List<Obra> listaobra=new ArrayList<>();
+                     List<Artista> buscarartista=new ArrayList<>();
+                     listaobra=buscarobra,crearobras();
+                     buscarartista=buscarobra.crearartistas();
+                    try(Scanner criterio = new Scanner(System.in)){
+                        int opc=0
+
+                        System.out.println("Dime como quieres buscar tu obra");
+                        System.out.println("Titulo: 1");
+                        System.out.println("Artista: 2");
+                        System.out.println("Anio: 3");
+                        opc=Scanner.nextInt();
+                        if(opc==1){
+                            String titulo;
+                            System.out.println("Dame el titulo por el lcual quieres buscar:");
+                            titulo=Scanner.nextLine;
+                            for(int i=0; i<buscarobra.size;i++){
+                                if(buscarartista.get(i).getTitulo()==Titulo){
+                                    System.out.println("["+i+"]"+"El titulo es:"+buscarobra.get(i).getTitulo()+"fecha de creacion: "+listaobra.get(i).getFecha()+"El precio de referencia: "+listaobra.get(i).getprecioRef()+"Dimensiones: "+listaobra.get(i).getDimensiones());
+                                }
+                            }
+
+                        }
+
+                    
+
+                    }
+                    catch{
+
+                    }
+
+
+
+                     for (obra obra : buscartitutlo) {
+                        if(){
+
+                        }
+                    }
+
+                
+                              
+
+                
+//............................................................................................................................//
+
+
+
+                
+                

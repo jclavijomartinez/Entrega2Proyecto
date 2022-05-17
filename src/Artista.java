@@ -1,18 +1,19 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 public class Artista {
+    private ArrayList<Obra> listaobras = new ArrayList<>();
     private long codigoArtista;
     private long cedula;
     private String nombre;
     private String apellido;
     private Calendar fechaNacimiento = Calendar.getInstance();
     private long telefono;
-    public Artista(long codigoArtista, long cedula, String nombre, String apellido,int dia,int mes,int anio, long telefono) {
-        this.codigoArtista = codigoArtista;
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.setFechaNacimiento(dia, mes, anio);
-        this.telefono = telefono;
+    
+    public ArrayList<Obra> getObras() {
+        return listaobras;
+    }
+    public void setObras(ArrayList<Obra> listaobras) {
+        this.listaobras = listaobras;
     }
     public long getCodigoArtista() {
         return codigoArtista;
@@ -49,6 +50,15 @@ public class Artista {
     }
     public void setFechaNacimiento(int dia, int mes, int anio) {
         this.fechaNacimiento.set(anio , mes, dia);
+    }
+    public Artista(long codigoArtista, long cedula, String nombre, String apellido,int dia,int mes,int anio, long telefono, ArrayList<Obra> lista) {
+        this.codigoArtista = codigoArtista;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.setFechaNacimiento(dia, mes, anio);
+        this.telefono = telefono;
+        this.setObras(lista);
     }
     
 }

@@ -42,4 +42,10 @@ public class ControlGaleria {
     public void agregarClientes(Cliente nuevoCliente) {
         listaDeClientes.add(nuevoCliente);
     }
+    public ArrayList<Obra> getlistaobras() {
+        return listaDeObras;
+    }
+    public ArrayList<Artista> getlistaartistas() {
+        return listaDeArtistas;
+    }
 }

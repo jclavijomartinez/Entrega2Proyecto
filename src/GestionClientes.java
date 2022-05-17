@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class GestionClientes {
     //crear cliente
     public static Cliente crearCliente(long codigoCliente,long cedula,String nombre,String apellidos,String direccionEntrega,long telefono) {
