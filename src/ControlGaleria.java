@@ -53,4 +53,14 @@ public class ControlGaleria {
     public void llenarobras(String[] DATA) {
         //recibir el string[] y procesar con los códigos para comparar y llenar las listas
     }
+    public void escribirEnArchivo(String ruta) {
+        File entradatxt = new File(ruta);
+        try (FileWriter fw = new FileWriter(entradatxt)) {
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw);
+            out.println("texto");
+        } catch (IOException e) {
+            System.out.println("problema al usar el archivo, revisa");
+        }
+    }
 }

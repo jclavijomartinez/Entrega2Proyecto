@@ -1,0 +1,511 @@
+                   Punto 3
+                    listadeartistas = galeria.getlistaartistas();
+                    int siesta = 0;
+                    int cont1 = 0;
+                    int cantidadaDSinArtista = 0;
+                    int NumeroTempoSinArtista;
+                    int cantidadaDConArtista = 0;
+                    int NumeroTempoConArtista; 
+                    // mostrar los artistas disp.
+                    for (Artista artistas : listadeartistas) {
+                        System.out.println("["+cont1+"]"+"nombre: " + artistas.getNombre() + " apellidos: " + artistas.getApellido()+ " cedula: " + artistas.getCedula());
+                        cont1++;
+                    }
+                    System.out.print("el artista que hizo la obra nueva está en esta lista? ");
+                     int siesta = entrada.nextint();
+                    if (siesta == 1) {
+                        try (Scanner nuevaobra = new Scanner(System.in)) {
+                            System.out.print("Dame el codigo de la nueva obra (EL CODIGO DEBE TENER 7 DIGITOS");
+                            String codigoObraNuevaSinArtista= nuevaobra.nextLine();
+                            System.out.print("Dame el titulo de la nueva obra: ");
+                            String tituloObraNuevaSinArtista = nuevaobra.nextLine();
+                            System.out.print("Dame el dia de creacion de la nueva obra: ");
+                            int diaObraNuevaSinArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el mes de creacion de la nueva obra: ");
+                            int mesObraNuevaSinArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el year de creacion de la nueva obra: ");
+                            int yearObraNuevaSinArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el precio de la nueva obra: ");
+                            Float precioObraNuevaSinArtista = nuevaobra.nextFloat();
+                            System.out.print("Dame las dimensiones de la nueva obra: (altoxancho) ");
+                            String dimsObraNuevaSinArtista = nuevaobra.nextLine();
+                            // crear una nueva obra
+                            Obra obraAAgregar = new Obra(codigoObraNuevaSinArtista, tituloObraNuevaSinArtista, diaObraNuevaSinArtista, mesObraNuevaSinArtista,yearObraNuevaSinArtista, precioObraNuevaSinArtista, dimsObraNuevaSinArtista, 5, 1, 1, 1854, false);
+                            galeria.agregarObra(obraAAgregar);.
+                            //INTENTO DE VER LA CANTIDAD DE DIGITOS//
+                           //Length
+                           if(codigoObraNuevaSinArtista.Length()==7)
+                           {
+                               System.out.print("El codigo de la obra a sido aceptado ");
+                           }
+                           else{
+                               System.out.print("Revisa el codigo de la obra ");
+                           }
+
+                           
+                            for (Artista artistas : listadeartistas) {
+                                if(codigoObraNuevaSinArtista == codigodearchivo)
+                                {
+
+                                    System.out.println("El codigo ya existe ");
+                                }
+
+
+                        }catch (InputMismatchException  e) {
+                            System.out.println("revisa el dato que escribiste!");
+
+                    } else {
+                            System.out.println("Datos Artista: ");
+                            try (Scanner  nuevoartista  = new Scanner(System.in)) {
+                                        System.out.print("Dame el Codigo del artista: ");
+                                        string codigoArtista = nuevoartista.nextLine();
+                                        System.out.print("Dame la cedula del artista: ");
+                                        Long cedula= nuevoartista.nextLong(); 
+                                        System.out.print("Dame el Nombre del artista: ");
+                                        String nombre = nuevoartista.nextLine();
+                                        System.out.print("Dame el Apellido del artista: ");
+                                        String apellido = nuevoartista.nextLine();
+                                        System.out.print("Dame el dia de necimiento del artista ");
+                                        int dianac= nuevoartista.nextInt();
+                                        System.out.print("Dame el mes de necimiento del artista ");
+                                        int mesnac= nuevoartista.nextInt();
+                                        System.out.print("Dame el year de necimiento del artista ");
+                                        int ynac= nuevoartista.nextInt(); 
+                                        System.out.print("Dame el telefono del artista ");
+                                        Long tel= nuevoartista.nextLong();
+                                        Artista artistaAAgregar = new Artista(codigoArtista, cedula, nombre, apellido, dianac, mesnac, ynac, tel);
+                                        
+                                        System.out.println("Datos Obra con artista: ");    
+                                            try (Scanner nuevaobra = new Scanner(System.in)) {
+                            System.out.print("Dame el codigo de la nueva obra (EL CODIGO DEBE TENER 7 DIGITOS");
+                            string codigoObraNuevaConArtista= nuevaobra.nextLine();
+                            System.out.print("Dame el titulo de la nueva obra: ");
+                            String tituloObraNuevaConArtista = nuevaobra.nextLine();
+                            System.out.print("Dame el dia de creacion de la nueva obra: ");
+                            int diaObraNuevaConArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el mes de creacion de la nueva obra: ");
+                            int mesObraNuevaConArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el year de creacion de la nueva obra: ");
+                            int yearObraNuevaConArtista = nuevaobra.nextInt();
+                            System.out.print("Dame el precio de la nueva obra: ");
+                            Float precioObraNuevaConArtista = nuevaobra.nextFloat();
+                            System.out.print("Dame las dimensiones de la nueva obra: (altoxancho) ");
+                            String dimsObraNuevaConArtista = nuevaobra.nextLine();
+                            // crear una nueva obra
+                            Obra obraAAAgregar = new Obra(codigoObraNuevaConArtista, tituloObraNuevaConArtista, diaObraNuevaConArtista, mesObraNuevaConArtista,yearObraNuevaConArtista, precioObraNuevaConArtista, dimsObraNuevaConArtista, 5, 1, 1, 1854, false);
+                            galeria.agregarObra(obraAAAgregar);
+                             //INTENTO DE VER LA CANTIDAD DE DIGITOS//
+                           //Length
+                           if(codigoObraNuevaSinArtista.Length()==7)
+                           {
+                               System.out.print("El codigo de la obra a sido aceptado ");
+                           }
+                           else{
+                               System.out.print("Revisa el codigo de la obra ");
+                           }
+
+                           
+                            for (Artista artistas : listadeartistas) {
+                                if(codigoObraNuevaSinArtista == codigodearchivo)
+                                {
+
+                                    System.out.println("El codigo ya existe ");
+                                }
+                        }catch (InputMismatchException  e) {
+                            System.out.println("revisa el dato que escribiste!");
+                        } 
+Punto 3
+/----------------------------/--------------------/--------------------------------------/------------------------/-----------------------/-----------------/---------------/-----------------/-----------------------/-----------------------/----------------------/
+
+
+
+
+
+
+Punto 9
+
+//Modificar datos cliente
+                try (Scanner  modificarcliente = new Scanner(System.in)) {
+                System.out.println("Dame el codigo del cliente a modificar");
+                    String codigoCliente = modificarcliente.nextLine();
+                    ArrayList<Cliente> listadeclientes = new ArrayList<>();
+                    for (Cliente cliente : listadeclientes) {
+                        if(!(cliente.getCodigoCliente() == codigoCliente)){
+                            System.out.println("no puedo modificar este cliente, no existe!");
+                            break;
+                        } else {
+                               for (int i = 0; i < listadeclientes.size(); i++) {
+                                    System.out.println("Aqui puedes modificar la obra, puedes modificar:");
+                                        System.out.println("1. Código ");
+                                        System.out.println("2. Cedula");
+                                        System.out.println("3. Nombre");
+                                        System.out.println("4. Apellidos");
+                                        System.out.println("5. Direccion de Entrega");
+                                        System.out.println("6. Telefono");
+                                        System.out.print("Que quieres modificar: ");
+                                        int opcionmod = modificarcliente.nextInt();
+                                        switch (opcionmod) {
+                                            case 1:
+                                                System.out.print("Dame el nuevo codigo: ");
+                                                String nuevocod = modificarcliente.nextLine();
+                                                if (nuevocod!=listadeclientes.get(i).getCodigoCliente()) {
+                                                    listadeclientes.get(i).setCodigoCliente(nuevocod);
+                                                } else {
+                                                    System.out.println("el codigo nuevo no puede ser igual al anterior");
+                                                }
+                                            break;
+
+                                            case 2 :
+                                                System.out.print("dame la nueva Cedula: ");
+                                                Long nuevaCedula = modificarcliente.nextLong();
+                                                listadeclientes.get(i).setCedula(nuevaCedula);
+                                                
+
+                                            break;
+
+                                            
+                                            case 3:
+                                                System.out.print("dame el nuevo Nombre: ");
+                                                String nuevoNombre = modificarcliente.nextLine();
+                                                listadeclientes.get(i).setNombre(nuevoNombre);
+                                                
+
+                                            break;
+
+
+                                            case 4:
+                                                System.out.print("dame el nuevo Apellido: ");
+                                                String nuevoApellido = modificarcliente.nextLine();
+                                                listadeclientes.get(i).setApellidos(nuevoApellido);
+
+                                            break;
+
+
+                                            case 5:
+                                                System.out.print("dame la nueva Direccion de Entrega: ");
+                                                String nuevaDireccionEntr = modificarcliente.nextLine();
+                                                listadeclientes.get(i).setDireccionEntrega(nuevaDireccionEntr);
+
+                                            break;
+
+
+                                            case 6:
+                                                System.out.print("dame el nuevo Telefono: ");
+                                                Long nuevoTelefon = modificarcliente.nextLong();
+                                                listadeclientes.get(i).setTelefono(nuevoTelefon);
+
+                                            break;
+
+
+
+                                        
+                                            default:
+                                                break;
+                                        }
+                                   
+                               }
+                    
+                    }   
+                        }
+                        
+                        
+                    }catch (NoSuchElementException e) {
+                    System.out.println("no reconozco esa opcion");
+                }
+
+            ----------/------------/------------------------/----------------------/-------------------/-
+
+punto 13
+
+int cont13 = 0;
+                    for (Obra obracompra : listadeobrascompra) {
+                        System.out.println("[" + cont13 + "]" + "Cedula: " + cliente.getCedula() + " Nombre completo: " + cliente.getNombre() + " " + cliente.getApellidos() + " Direccion: "+ cliente.getDireccionEntrega() + " Telefono: " + cliente.getTelefono());
+                        cont13++;
+                    }
+
+
+Punto 12
+
+
+//Eliminar CompraObra
+    public static void EliminarObra(int codigo, List<Obra> listaObras, int codigoCompra) throws Exception {
+        for (int i = 0; i < listaObras.size(); i++) {
+            if (codigo==listaObras.get(i).getCodigoObra()) {
+                System.out.println("Niceee, el codigo ingresado existe ");
+            } else {
+                throw new Exception();
+            }
+        }
+        String confirm;
+        for (int i = 0; i < listaObras.size(); i++) {
+            if (codigoCompra==codigo) {
+                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
+                try (Scanner scanner= new Scanner(System.in)){
+                    System.out.println("desea eliminar el codigo? yes/not");
+                    confirm=scanner.next();
+                    if (confirm=="yes") {
+                        System.out.println("La obra fue eliminada con éxito: ");
+                    } else {
+                        System.out.println("Hubo un fallo al eliminar la obra, revisa bien lo datos");
+                    }
+                } catch (Exception e) {
+                   
+                }
+            } else {
+                System.out.println("Verifique el código ingresado :)");
+            }
+        }
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//punto 2....................................................................................................................//
+                         int escoje;
+                System.out.println("por que método quieres buscar?");
+                System.out.println("Titulo: 1");
+                System.out.println("Artista: 2");
+                System.out.println("Obra: 3");
+                escoje=escoje.nextInt;
+                
+                    
+                    
+
+                     GestionObras buscarobra= new GestionObras();
+                     List<Obra> listaobra=new ArrayList<>();
+                     List<Artista> buscarartista=new ArrayList<>();
+                     listaobra=buscarobra,crearobras();
+                     buscarartista=buscarobra.crearartistas();
+                    try(Scanner criterio = new Scanner(System.in)){
+                        int opc=0
+
+                        System.out.println("Dime como quieres buscar tu obra");
+                        System.out.println("Titulo: 1");
+                        System.out.println("Artista: 2");
+                        System.out.println("Anio: 3");
+                        opc=Scanner.nextInt();
+                        if(opc==1){
+                            String titulo;
+                            System.out.println("Dame el titulo por el lcual quieres buscar:");
+                            titulo=Scanner.nextLine;
+                            for(int i=0; i<buscarobra.size;i++){
+                                if(buscarartista.get(i).getTitulo()==Titulo){
+                                    System.out.println("["+i+"]"+"El titulo es:"+buscarobra.get(i).getTitulo()+"fecha de creacion: "+listaobra.get(i).getFecha()+"El precio de referencia: "+listaobra.get(i).getprecioRef()+"Dimensiones: "+listaobra.get(i).getDimensiones());
+                                }
+                            }
+
+                        }
+                        if(opc==2)
+                        {
+                            String artista;
+                            System.out.println("Dame el artista que quieres buscar: ");
+                            artista=Scanner.nextLine();
+                            for(int i=0;i<buscarobra.size();i++){
+                                if(artista.get(i).getNombre()==artista){
+
+                                    System.out.println("["+i"]"+"Codigo: "+ artista.get(i).getcodigoartista()+"Cedula: "+ artista.get(i).getcedula()+"Nombre: "+ artista.get(i).getNombre()+"Apellido: "+artista.get(i).getApellido()+" Fecha de nacimento: "+ artista.get(i).getFechaNacimiento()+"Telefono: "+artista.get(i).getTelefono());
+                                }
+                            }
+                        }
+                        if(opc==3){
+                             
+
+                            System.out.println("Dame el year por el cual deseas buscar: ");
+                            year=Scanner.nextInt();
+                            for(int i =0;i<listaobra.size();i++){
+                                if(artista.get(i).getFecha().YEAR==year){
+                                    System.out.println("["+i+"]"+"Titulo: "+ astista.get(i).getTitulo()+"Fecha de creacion: " + artista.get(i).getFecha().YEAR+"\" + artista.get(i).getFecha().MONTH+"\"+ artista.get(i).getFecha().DATE+"Precio de referencia: "+ artista.get(i).getprecioRef()+" Enn COP, sus dimensiones son: "+artista.get(i).getDimensiones());
+                                }
+                            }
+                        }
+                    
+
+                    }
+                            catch (InputMismatchException e) {
+                                System.out.println("revisa el dato que ingresaste");
+                            } catch (NoSuchElementException e) {
+                                System.out.println("revisa lo que ingresaste");
+                            }
+  
+//............................................................................................................................//
+
+Punto5//......................................................................................................................//
+try{
+System.out.println("dime el codigo de la obra a eliminar: ");
+codigo=Scanner.nextInt();
+System.out.println("Ahora dame el codigo de la compra de la obra: ");
+codigoCompra=Scanner.nextInt();
+
+GestionObras elimiObra= new GestionObras();
+elimiObra.EliminarObra(codigo, elimiObra.crearObra(),codigoCompra);
+
+}
+catch(Excepcion e){
+
+System.out.println("Sorry la obra no existe o un codigo quedó mal escrito ");
+
+}
+
+
+
+                
+//............................................................................................................................//
+
+Punto8//......................................................................................................................//
+
+try{
+     Compra compraCliente;
+     long cedula2, telefono2;
+    String nombre2, apellidos2, direccionEntrega2,codigoCliente2;
+   GestionClientes administrarCliente=new GestionClientes();
+    Cliente nuevoCliente;
+    System.out.println("Dame el codigo del cliente que quieres insertar");
+    codigoCliente=Scanner.nextLine();
+    Sytem.out.println("Dame el nombre del cliente: ");
+    nombre2=Scanner.nextLine();
+    System.out.println("Dame el lapellodo: ");
+    apellidos2=Scanner.nextLine();
+    System.out.println("Pasame la direccion bb: ");
+    direccionEntrega2=Scanner.nextLine();
+    System.out.println("Dame la cedula: ");
+    cedula2=Scanner.nextLong();
+    System.out.println("Dame el telefono bb: ");
+    telefono2=Scanner.nextLong();
+    List<Cliente>lcliente=new ArrayList<>();
+    codigoCliente2=administrarCliente.crearClientes();
+
+    for(int i=0;i<lcliente.size();i++){
+        if(codigoCliente2==codigo){
+
+System.out.println("El codigo ya existe intenta con otro");
+        }else{
+System.out.println("El codigo esta disponible");
+
+        }
+
+    }
+
+    Cliente nuevoCliente =new Cliente( codigoCliente,  cedula,  nombre,  apellidos,  direccionEntrega, telefono);
+
+}catch(Excepcion e){
+    System.out.println("Lo siento algo salió mal :( ");
+}
+
+
+
+
+
+
+                
+//............................................................................................................................//
+
+
+Punto11//.....................................................................................................................//
+
+veo como 
+
+
+
+
+
+
+
+//............................................................................................................................//

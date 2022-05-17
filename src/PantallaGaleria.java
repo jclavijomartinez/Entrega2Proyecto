@@ -5,6 +5,7 @@ public class PantallaGaleria {
     public static ArrayList<Obra> listadeobras = new ArrayList<>();
     public static ArrayList<Artista> listadeartistas = new ArrayList<>();
     public static ArrayList<Cliente> listadeclientes = new ArrayList<>();
+    public static ArrayList<Obra> listadeobrascompra = new ArrayList<>();
     public static void main(String[] args) {
         try (Scanner entrada = new Scanner(System.in)) {
             String ruta = "D:\\UNIVERSIDAD\\2210\\progaramacion avanzada\\ProytectoEntrega2\\ejemplodeinfo.txt";
@@ -39,9 +40,10 @@ public class PantallaGaleria {
                     }
                     break;
                 case 2:
-                  listadeartistas.
+                 //listadeartistas
                     break;
                 case 3:
+                
                     break;
                 case 4:
                     try (Scanner modificarobra = new Scanner(System.in)) {
@@ -56,7 +58,7 @@ public class PantallaGaleria {
                                     System.out.print("Dame el codigo de la obra: ");
                                     Long codigo = nuevaentrada.nextLong();
                                     for (Obra obra2 : listaobras) {
-                                        
+     //wtf                                   
                                     }
                                 } catch (NoSuchElementException e) {
                                     System.out.println("no reconozco esa opcion");
@@ -90,13 +92,131 @@ public class PantallaGaleria {
                 break;
 
                 case 9:
-                //Modificar datos cliente
+                /*
+                    //Modificar datos cliente
+                try (Scanner  modificarcliente = new Scanner(System.in)) {
                 System.out.println("Dame el codigo del cliente a modificar");
-                
+                    String codigoCliente = modificarcliente.nextLine();
+                    ArrayList<Cliente> listadeclientes = new ArrayList<>();
+                    for (Cliente cliente : listadeclientes) {
+                        if(!(cliente.getCodigoCliente() == codigoCliente)){
+                            System.out.println("no puedo modificar este cliente, no existe!");
+                            break;
+                        } else {
+                               for (int i = 0; i < listadeclientes.size(); i++) {
+                                    System.out.println("Aqui puedes modificar la obra, puedes modificar:");
+                                        System.out.println("1. Código ");
+                                        System.out.println("2. Cedula");
+                                        System.out.println("3. Nombre");
+                                        System.out.println("4. Apellidos");
+                                        System.out.println("5. Direccion de Entrega");
+                                        System.out.println("6. Telefono");
+                                        System.out.print("Que quieres modificar: ");
+                                        int opcionmod = modificarcliente.nextInt();
+                                        switch (opcionmod) {
+                                            case 1:
+                                                System.out.print("Dame el nuevo codigo: ");
+                                                String nuevocod = modificarcliente.nextLine();
+                                                if (nuevocod!=listadeclientes.get(i).getCodigoCliente()) {
+                                                    listadeclientes.get(i).setCodigoCliente(nuevocod);
+                                                } else {
+                                                    System.out.println("el codigo nuevo no puede ser igual al anterior");
+                                                }
+                                            break;
+
+                                            case 2 :
+                                                System.out.print("dame la nueva Cedula: ");
+                                                Long nuevaCedula = modificarcliente.nextLong();
+                                                listadeclientes.get(i).setCedula(nuevaCedula);
+                                                
+
+                                            break;
+
+                                            
+                                            case 3:
+                                                System.out.print("dame el nuevo Nombre: ");
+                                                String nuevoNombre = modificarcliente.nextLine();
+                                                listadeclientes.get(i).setNombre(nuevoNombre);
+                                                
+
+                                            break;
+
+
+                                            case 4:
+                                                System.out.print("dame el nuevo Apellido: ");
+                                                String nuevoApellido = modificarcliente.nextLine();
+                                                listadeclientes.get(i).setApellidos(nuevoApellido);
+
+                                            break;
+
+
+                                            case 5:
+                                                System.out.print("dame la nueva Direccion de Entrega: ");
+                                                String nuevaDireccionEntr = modificarcliente.nextLine();
+                                                listadeclientes.get(i).setDireccionEntrega(nuevaDireccionEntr);
+
+                                            break;
+
+
+                                            case 6:
+                                                System.out.print("dame el nuevo Telefono: ");
+                                                Long nuevoTelefon = modificarcliente.nextLong();
+                                                listadeclientes.get(i).setTelefono(nuevoTelefon);
+
+                                            break;
+
+
+
+                                        
+                                            default:
+                                                break;
+                                        }
+                                   
+                               }
+                    
+                    }   
+                        }
+                        
+                        
+                    }catch (NoSuchElementException e) {
+                    System.out.println("no reconozco esa opcion");
+                }
+
                 break;
-            }
-        } catch (NoSuchElementException e) {
+
+*/
+
+                case 10:
+                break;
+
+                case 11:
+                break;
+
+
+                case 12:
+                break;
+
+                case 13:
+                     int cont13 = 0;
+                    for (Obra obracompra : listadeobrascompra) {
+                        System.out.println("[" + cont13 + "]" + "Cliente:" + obracompra.setCompraObra(codigoCompra, dia, mes, anio, pagado));
+                        cont13++;
+                    }
+                    
+                break;
+                
+                } //switch
+                
+                
+
+               
+            }//try general
+            catch(NoSuchElementException e){
             System.out.println("problema con elemento");
-        }
-    }
-}
+            }
+        }//main
+        
+        
+        
+}//clase
+

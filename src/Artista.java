@@ -1,24 +1,22 @@
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 public class Artista {
-    private ArrayList<Obra> listaobras = new ArrayList<>();
-    private long codigoArtista;
+    private List<Obra> listaobras;
+    private String codigoArtista;
     private long cedula;
     private String nombre;
     private String apellido;
     private Calendar fechaNacimiento = Calendar.getInstance();
     private long telefono;
     
-    public ArrayList<Obra> getObras() {
-        return listaobras;
-    }
     public void setObras(ArrayList<Obra> listaobras) {
         this.listaobras = listaobras;
     }
-    public long getCodigoArtista() {
+    public String getCodigoArtista() {
         return codigoArtista;
     }
-    public void setCodigoArtista(long codigoArtista) {
+    public void setCodigoArtista(String codigoArtista) {
         this.codigoArtista = codigoArtista;
     }
     public long getCedula() {
@@ -51,14 +49,21 @@ public class Artista {
     public void setFechaNacimiento(int dia, int mes, int anio) {
         this.fechaNacimiento.set(anio , mes, dia);
     }
-    public Artista(long codigoArtista, long cedula, String nombre, String apellido,int dia,int mes,int anio, long telefono, ArrayList<Obra> lista) {
+    public void addObra(Obra nuevaObra) {
+        if (this.listaobras == null) {
+            
+        } else {
+            
+        }
+    }
+    public Artista(String codigoArtista, long cedula, String nombre, String apellido,int dia,int mes,int anio, long telefono,List<Obra> listaobras) {
         this.codigoArtista = codigoArtista;
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.setFechaNacimiento(dia, mes, anio);
         this.telefono = telefono;
-        this.setObras(lista);
+        this.listaobras = new ArrayList<>();
     }
     
 }

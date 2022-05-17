@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Obra {
-    private ArrayList<Artista> listadeartistas= new ArrayList<>(); 
+    private List<Artista> listadeartistas; 
     private Compra compraObra;
     private long codigoObra;
     private String titulo;
@@ -10,12 +11,6 @@ public class Obra {
     private float precioRef;
     private String dimensiones;
     
-    public ArrayList<Artista> getListadeartistas() {
-        return listadeartistas;
-    }
-    public void setListadeartistas(ArrayList<Artista> listadeartistas) {
-        this.listadeartistas = listadeartistas;
-    }
     public long getCodigoObra() {
         return codigoObra;
     }
@@ -52,14 +47,24 @@ public class Obra {
     public void setDimensiones(String dimensiones) {
         this.dimensiones = dimensiones;
     }
-    public Obra(long codigoObra, String titulo, int dia, int mes, int anio,float precioRef,String dimensiones,long codigoCompra,int diacompra, int mescompra, int aniocompra,boolean pagado,ArrayList<Artista> lista) {
+    
+    public void addArtista(Artista artista){
+        if(this.listadeartistas == null){
+            this.listadeartistas = new ArrayList<Artista>();
+        }
+        this.listadeartistas.add(artista);
+    }
+    public Obra(long codigoObra, String titulo, int dia, int mes, int anio,float precioRef,String dimensiones,long codigoCompra,int diacompra, int mescompra, int aniocompra,boolean pagado,List<Artista> lista) {
         this.setCodigoObra(codigoObra);
         this.setTitulo(titulo);
         this.setFecha(dia, mes, anio);
         this.setPrecioRef(precioRef);
         this.setDimensiones(dimensiones);
         this.setCompraObra(codigoCompra,diacompra,mescompra, aniocompra,pagado);
-        this.setListadeartistas(lista);
+        this.listadeartistas = new ArrayList<>();
     }
-}
 
+    //paso 1: definir cual se va a crear primero
+    //paso 2: crear lista vacia
+    //paso 3: llenar el otro con base al paso 1
+}
