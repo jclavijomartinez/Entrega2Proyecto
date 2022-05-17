@@ -1,6 +1,6 @@
 public class Cliente {
     private Compra compraCliente;
-    private long codigoCliente;
+    private String codigoCliente;
     private long cedula;
     private String nombre;
     private String apellidos;
@@ -12,10 +12,10 @@ public class Cliente {
     public void setCompracliente(Compra compracliente) {
         this.compraCliente = compracliente;
     }
-    public long getCodigoCliente() {
+    public String getCodigoCliente() {
         return codigoCliente;
     }
-    public void setCodigoCliente(long codigoCliente) {
+    public void setCodigoCliente(String codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
     public long getCedula() {
@@ -48,7 +48,7 @@ public class Cliente {
     public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
-    public Cliente(long codigoCliente, long cedula, String nombre, String apellidos, String direccionEntrega,long telefono) {
+    public Cliente(String codigoCliente, long cedula, String nombre, String apellidos, String direccionEntrega,long telefono) {
         this.codigoCliente = codigoCliente;
         this.cedula = cedula;
         this.nombre = nombre;
