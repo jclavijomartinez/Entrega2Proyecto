@@ -8,7 +8,7 @@ public class PantallaGaleria {
     public static ArrayList<Obra> listadeobrascompra = new ArrayList<>();
     public static void main(String[] args) {
         try (Scanner entrada = new Scanner(System.in)) {
-            String ruta = "D:\\UNIVERSIDAD\\2210\\progaramacion avanzada\\ProytectoEntrega2\\ejemplodeinfo.txt";
+            String ruta = "infodeejemplo.txt";
             int opcion = 0;
             System.out.println("¡TE DAMOS LA BIENVENIDA A LA GALERÍA! estas son las opciones que puedes elegir");
             System.out.println(" 1. Ver listado de Obras disponibles ");
@@ -41,12 +41,14 @@ public class PantallaGaleria {
                     break;
                 case 2:
                  //listadeartistas
+            
                     break;
                 case 3:
                 
                     break;
                 case 4:
                     try (Scanner modificarobra = new Scanner(System.in)) {
+                        galeria.leertxtyllenarobras(ruta);
                         System.out.print("Dame el codigo de la obra a modificar: ");
                         Long codigoobra = modificarobra.nextLong();
                         ArrayList<Obra> listaobras = new ArrayList<>();
@@ -55,11 +57,11 @@ public class PantallaGaleria {
                                 System.out.println("no puedo modificar esa obra, no existe!");
                             } else {
                                 try (Scanner nuevaentrada = new Scanner(System.in)) {
-                                    System.out.print("Dame el codigo de la obra: ");
-                                    Long codigo = nuevaentrada.nextLong();
+                                    //System.out.print("Dame el codigo de la obra: ");
+                                    /*Long codigo = nuevaentrada.nextLong();
                                     for (Obra obra2 : listaobras) {
-     //wtf                                   
-                                    }
+
+                                    }*/
                                 } catch (NoSuchElementException e) {
                                     System.out.println("no reconozco esa opcion");
                                 }
@@ -194,9 +196,11 @@ public class PantallaGaleria {
 
 
                 case 12:
+                    
                 break;
 
                 case 13:
+                /*
                      int cont13 = 0;
                     for (Obra obracompra : listadeobrascompra) {
                         System.out.println("[" + cont13 + "]" + "Cliente:" + obracompra.setCompraObra(codigoCompra, dia, mes, anio, pagado));
@@ -204,7 +208,7 @@ public class PantallaGaleria {
                     }
                     
                 break;
-                
+                */
                 } //switch
                 
                 

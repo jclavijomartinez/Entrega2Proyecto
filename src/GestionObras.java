@@ -12,7 +12,11 @@ public class GestionObras {
         Artista artistaAagregar = new Artista(codigoArtista, cedula, nombre, apellido,dia,mes,anio, telefono,listaobras);
         return artistaAagregar;
     }
-
+    //13
+    int i ;
+    public void ComprasExistentes(List<Obra> listadeobras){ //verificar que pagado en la Obra, sea falso
+       
+    }
     //Eliminar Obra
     public static void EliminarObra(int codigo, List<Obra> listaObras, int codigoCompra) throws Exception {
         for (int i = 0; i < listaObras.size(); i++) {

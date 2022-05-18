@@ -1,5 +1,6 @@
-000001 - Nuestra señora de fatima - 1963 - 15000000 - 158x60
-000002 - Las segadoras - 1895 - 35000000 - 200x160
+//diacompra - mescompra - aniocompra - pagado
+000001 - Nuestra señora de fatima - 1963 - 15000000 - 158x60 - 300015 - 15 - 05 - 2016 - false
+000002 - Las segadoras - 15 - 04 - 1895 - 35000000 - 200x160 - 300002 - 10 - 08 - 2004 - false
 100001 - 100372162 - Fernando - Botero - 3143268765 - 19/04/1932
 100002 - 100376710 - Pedro Nel - Gomez - 3143260312 - 04/07/1899
 200001 - 100372162 - Martin - Alvares - carrera 3 #24-36 - 3143268765

@@ -20,13 +20,19 @@ public class ControlGaleria {
             try (Scanner lectura = new Scanner(entradatxt)) {
                 BufferedReader bf =new BufferedReader(fr);
                 Long cantlin = bf.lines().count();
-                for (int i = 0; i < 9; i++) {
-                    lectura.nextLine(); //comentarios de 
-                }
-                for (int i = 1; i < cantlin; i++) {
-                    String[] datos =lectura.nextLine().split("-");
-                    System.out.println(datos[0]);
-                    //llamar a llenarobras
+                for (int i = 1; i < cantlin; i++) { 
+                    String[] datos =lectura.nextLine().split(" - ");
+                    char primerdig = datos[0].charAt(0);
+                    if (primerdig == '0') {
+                        List<Artista> testlist;
+                        //float,String,long,int, int, int,
+                        Obra nuevaObra = new Obra(Long.parseLong(datos[0]), datos[1],Integer.parseInt(datos[2]) ,Integer.parseInt(datos[3]),Integer.parseInt(datos[4]),datos[5],datos[6],datos[7],Integer.parseInt(datos[7]),Integer.parseInt(datos[8]),Boolean.parseBoolean(datos[9]) ,testlist);
+                        this.agregarObra(nuevaObra);
+                    } else if(primerdig == '1') {
+                    } else if(primerdig == '2') {
+                    } else if(primerdig == '3') {
+                        
+                    } 
                 }
             } catch (FileNotFoundException e) { //excepcion del scanner
                 System.out.println("el archivo no existe revisa");

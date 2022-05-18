@@ -215,47 +215,12 @@ Punto 9
 
             ----------/------------/------------------------/----------------------/-------------------/-
 
-punto 13
-
-int cont13 = 0;
-                    for (Obra obracompra : listadeobrascompra) {
-                        System.out.println("[" + cont13 + "]" + "Cedula: " + cliente.getCedula() + " Nombre completo: " + cliente.getNombre() + " " + cliente.getApellidos() + " Direccion: "+ cliente.getDireccionEntrega() + " Telefono: " + cliente.getTelefono());
-                        cont13++;
-                    }
+punto 10
 
 
-Punto 12
 
 
-//Eliminar CompraObra
-    public static void EliminarObra(int codigo, List<Obra> listaObras, int codigoCompra) throws Exception {
-        for (int i = 0; i < listaObras.size(); i++) {
-            if (codigo==listaObras.get(i).getCodigoObra()) {
-                System.out.println("Niceee, el codigo ingresado existe ");
-            } else {
-                throw new Exception();
-            }
-        }
-        String confirm;
-        for (int i = 0; i < listaObras.size(); i++) {
-            if (codigoCompra==codigo) {
-                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
-                try (Scanner scanner= new Scanner(System.in)){
-                    System.out.println("desea eliminar el codigo? yes/not");
-                    confirm=scanner.next();
-                    if (confirm=="yes") {
-                        System.out.println("La obra fue eliminada con éxito: ");
-                    } else {
-                        System.out.println("Hubo un fallo al eliminar la obra, revisa bien lo datos");
-                    }
-                } catch (Exception e) {
-                   
-                }
-            } else {
-                System.out.println("Verifique el código ingresado :)");
-            }
-        }
-       
+
 
 
 
@@ -453,40 +418,57 @@ Punto8//........................................................................
 
 try{
      Compra compraCliente;
+
      long cedula2, telefono2;
+
     String nombre2, apellidos2, direccionEntrega2,codigoCliente2;
+
    GestionClientes administrarCliente=new GestionClientes();
+
     Cliente nuevoCliente;
+
     System.out.println("Dame el codigo del cliente que quieres insertar");
+
     codigoCliente=Scanner.nextLine();
+
     Sytem.out.println("Dame el nombre del cliente: ");
+
     nombre2=Scanner.nextLine();
+
     System.out.println("Dame el lapellodo: ");
+    
     apellidos2=Scanner.nextLine();
+
     System.out.println("Pasame la direccion bb: ");
+
     direccionEntrega2=Scanner.nextLine();
+
     System.out.println("Dame la cedula: ");
+
     cedula2=Scanner.nextLong();
+
     System.out.println("Dame el telefono bb: ");
+
     telefono2=Scanner.nextLong();
+
     List<Cliente>lcliente=new ArrayList<>();
+
     codigoCliente2=administrarCliente.crearClientes();
 
     for(int i=0;i<lcliente.size();i++){
+        
         if(codigoCliente2==codigo){
 
-System.out.println("El codigo ya existe intenta con otro");
+
         }else{
-System.out.println("El codigo esta disponible");
 
         }
 
     }
 
-    Cliente nuevoCliente =new Cliente( codigoCliente,  cedula,  nombre,  apellidos,  direccionEntrega, telefono);
 
 }catch(Excepcion e){
-    System.out.println("Lo siento algo salió mal :( ");
+
 }
 
 
@@ -495,56 +477,4 @@ System.out.println("El codigo esta disponible");
 
 
                 
-//............................................................................................................................//
-
-
-Punto11//.....................................................................................................................//
-
-try(Scanner buscar=new Scanner()){
-
-String codigoCliente;
-
-Long codigoObra;
-
-int min=3111111;
-
-int max=9999999;
-
-Compra codigoCompra;
-
-Long codigoComp
-
-Calendar fechaComp
-
-System.out.println("Dame el codigo del cliente: ");
-
-codigoCliente=buscar.nextLine();
-
-System.out.println("Ahora dame el codigo de la obra: ");
-
-codigoObra=buscar.nextLong();
-
-System.out,println("Dame el codigo de compra: ");
-codigoComp=Scanner.nextLong();
-
-System.out.println("Dame la fecha de compra: ");
-fechaComp=Scanner.next
-
-Random random=new Random();
-int value =random.nextInt(max+min)+min;
-
-for(int i=0; i<listaObras.size()&&listaDeClientes.size();i++){
-    if(codigoCompra.get(i).getCodigoCompra==codigoComp && fechaCompra.get(i).getfechaCompra()){
-
-    }else{
-
-    }
-}
-}
-
-
-
-
-
-
 //............................................................................................................................//

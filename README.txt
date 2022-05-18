@@ -3,7 +3,7 @@ AQUI PUEDES ENCONTRAR UN EJEMPLO DE CADA TIPO DE DATO QUE MANEJAMOS
 RECUERDA QUE LOS DATOS ESTÁN EN .../Proyecto/scr/infodeejemplo.txt
 //ejemplo obra
 codigoObra (empieza con 0) - titulo - dia de creacion - mes de creacion - año de creacion - precioRef - dimensiones(cmxcm) - codigoCompra - diacompra - mescompra - aniocompra - pagado
-ej: 000033 - Montañas - 1963 - 15000000 - 158x60
+ej: 000033 - Montañas - 01 - 01 - 1970 - 15000000 - 158x60 - 300003 - 01 - 02 - 1970 - false
 //ejemplo artista
 codigoArtista (empieza con 1) - cedula - nombre - apellido - dia - mes - anio - telefono
 ej: 100077 - 1000495381 - Valteri - Bottas - 01 - 01 -1970 - 3256874560
