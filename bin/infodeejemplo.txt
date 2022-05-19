@@ -1,0 +1,9 @@
+//diacompra - mescompra - aniocompra - pagado
+000001 - Las segadoras - 15 - 04 - 1895 - 35000000 - 200 - 65 - 300001 - 10 - 08 - 2004 - false
+000002 - Nuestra seniora de fatima - 01 - 01 - 1963 - 15000000 - 158 - 60 - 300002 - 15 - 05 - 2016 - false
+000003 - Horizontes - 01 - 04 - 1920 - 1000000000 - 150 - 95 - 30003 - 12 - 12 - 2021 - false
+000004 - El minero muerto - 21 - 04 - 1936 - 15000000 - 484 - 1115 - 300015 - 01 - 05 - 1994 - false
+000005 - Tierra, mar y aire - 01 - 10 - 1957 - 3000000 - 130 - 195 - 300015 - 03 - 01 - 1969 - false
+100001 - 100372162 - Fernando - Botero - 19 - 04 - 1932 - 3143268765
+100002 - 100376710 - Pedro Nel - Gomez - 04 - 07 - 1899 - 3143260312
+200001 - 100372162 - Martin - Alvares - carrera 3 #24-36 - 3143268765

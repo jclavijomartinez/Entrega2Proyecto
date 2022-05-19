@@ -17,36 +17,6 @@ public class GestionObras {
     public void ComprasExistentes(List<Obra> listadeobras){ //verificar que pagado en la Obra, sea falso,ahora q mierda hago con esto 
        
     }
-    //Eliminar Obra
-    public static void EliminarObra(int codigo, List<Obra> listaObras, int codigoCompra) throws Exception {
-        for (int i = 0; i < listaObras.size(); i++) {
-            if (codigo==listaObras.get(i).getCodigoObra()) {
-                System.out.println("Niceee, el codigo ingresado existe ");
-            } else {
-                throw new Exception();
-            }
-        }
-        String confirm;
-        for (int i = 0; i < listaObras.size(); i++) {
-            if (codigoCompra==codigo) {
-                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
-                try (Scanner scanner= new Scanner(System.in)){
-                    System.out.println("desea eliminar el codigo? yes/not");
-                    confirm=scanner.next();
-                    if (confirm=="yes") {
-                        System.out.println("La obra fue eliminada con éxito: ");
-                    } else {
-                        System.out.println("Hubo un fallo al eliminar la obra, revisa bien lo datos");
-                    }
-                } catch (Exception e) {
-                   
-                }
-            } else {
-                System.out.println("Verifique el código ingresado :)");
-            }
-        }
-       
 
-    }
 
 }

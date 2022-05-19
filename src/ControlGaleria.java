@@ -62,4 +62,104 @@ public class ControlGaleria {
     public ArrayList<Artista> getlistaartistas() {
         return listaDeArtistas;
     }
+    //Eliminar Obra
+    public static void EliminarObra(int codigo, List<Obra> listaObras, int codigoCompra) throws Exception {
+        for (int i = 0; i < listaObras.size(); i++) {
+            if (codigo==listaObras.get(i).getCodigoObra()) {
+                System.out.println("Niceee, el codigo ingresado existe ");
+            } else {
+                throw new Exception();
+            }
+        }
+        String confirm;
+        for (int i = 0; i < listaObras.size(); i++) {
+            if (codigoCompra==codigo) {
+                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
+                try (Scanner scanner= new Scanner(System.in)){
+                    System.out.println("desea eliminar el codigo? yes/not");
+                    confirm=scanner.next();
+                    if (confirm=="yes") {
+                        System.out.println("La obra fue eliminada con éxito: ");
+                    } else {
+                        System.out.println("Hubo un fallo al eliminar la obra, revisa bien lo datos");
+                    }
+                } catch (Exception e) {
+                   
+                }
+            } else {
+                System.out.println("Verifique el código ingresado :)");
+            }
+        }
+       
+
+    }
+    //Eliminar cliente
+    public static void EliminarCliente( List<cliente> listadeclientes) throws Exception {
+        int codigo;
+        System.out.println("Ingresa el codigo del cliente a eliminar ");
+        for (int i = 0; i < listadeclientes.size(); i++) {
+            if (codigo==listadeclientes.get(i).getCodigoCliente()) {
+                System.out.println("El codigo ingresado existe ");
+            } else {
+                throw new Exception();
+            }
+        }
+        String confirm;
+        for (int i = 0; i < listadeclientes.size(); i++) {
+            if (codigo==listadeclientes.get(i).getCodigoCliente()) {
+                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
+                try (Scanner scanner= new Scanner(System.in)){
+                    System.out.println("desea eliminar el codigo? yes/not");
+                    confirm=scanner.next();
+                    if (confirm=="yes") {
+                        System.out.println("El cliente fue eliminado con éxito: ");
+                    } else {
+                        System.out.println("Hubo un fallo al eliminar el cliente, revisa bien lo datos");
+                    }
+                } catch (Exception e) {
+                   
+                }
+            } else {
+                System.out.println("Verifique el código ingresado :)");
+            }
+        }
+       
+
+    }
+       //Eliminar Compra Obra/
+    public static void EliminarCompraObra(List<Obra> listadeobrascompra) throws Exception {
+        int codigo1; 
+        System.out.println("Ingresa el codigo de la compra a eliminar ");
+        for (int i = 0; i < listadeobrascompra.size(); i++) {
+            if (codigo1==listadeobrascompra.get(i).getCodigoCompra()) {
+                System.out.println("Niceee, el codigo ingresado existe ");
+            } else {
+                throw new Exception();
+            }
+        }
+        String confirm;
+        for (int i = 0; i < listadeobrascompra.size(); i++) {
+            if (codigoCompra==codigo1) {
+                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
+                try (Scanner scanner= new Scanner(System.in)){
+                    System.out.println("desea eliminar el codigo? yes/not");
+                    confirm=scanner.next();
+                    if (confirm=="yes") {
+                        System.out.println("La compra fue eliminada con éxito: ");
+                    } else {
+                        System.out.println("Hubo un fallo al eliminar la compra, revisa bien lo datos");
+                    }
+                } catch (Exception e) {
+                   
+                }
+            } else {
+                System.out.println("Verifique el código ingresado :)");
+            }
+        }
+       
+
+    }
+
+                    
+                    
 }
