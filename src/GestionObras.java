@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class GestionObras {
     // crear obra
-    static public Obra crearObra(long codigoObra, String titulo, int dia, int mes, int anio,float precioRef,String dimensiones,long codigoCompra,int diacompra, int mescompra, int aniocompra,boolean pagado,List<Artista> lista) {
-        Obra obraAAgregar = new Obra(codigoObra,titulo,dia,mes,anio,precioRef,dimensiones,codigoCompra,diacompra,mescompra,aniocompra,pagado,lista);
+    static public Obra crearObra(long codigoObra, String titulo, int dia, int mes, int anio,float precioRef,int alto, int ancho,long codigoCompra,int diacompra, int mescompra, int aniocompra,boolean pagado,List<Artista> lista) {
+        Obra obraAAgregar = new Obra(codigoObra,titulo,dia, mes, anio,precioRef,alto,ancho,codigoCompra,diacompra,mescompra,aniocompra,pagado,lista);
         return obraAAgregar;
     }
     // crear artista
@@ -14,7 +14,7 @@ public class GestionObras {
     }
     //13
     int i ;
-    public void ComprasExistentes(List<Obra> listadeobras){ //verificar que pagado en la Obra, sea falso
+    public void ComprasExistentes(List<Obra> listadeobras){ //verificar que pagado en la Obra, sea falso,ahora q mierda hago con esto 
        
     }
     //Eliminar Obra

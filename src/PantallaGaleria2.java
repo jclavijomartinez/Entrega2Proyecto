@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class PantallaGaleria {
+public class PantallaGaleria2 {
     public static ControlGaleria galeria = new ControlGaleria();
     public static ArrayList<Obra> listadeobras = new ArrayList<>();
     public static ArrayList<Artista> listadeartistas = new ArrayList<>();
@@ -9,6 +8,7 @@ public class PantallaGaleria {
     public static void main(String[] args) {
         try (Scanner entrada = new Scanner(System.in)) {
             String ruta = "infodeejemplo.txt";
+            galeria.leertxtyllenarobras(ruta); //lee y agrega las obras y artistas a las listas
             int opcion = 0;
             System.out.println("¡TE DAMOS LA BIENVENIDA A LA GALERÍA! estas son las opciones que puedes elegir");
             System.out.println(" 1. Ver listado de Obras disponibles ");
@@ -33,8 +33,8 @@ public class PantallaGaleria {
                     listadeobras = galeria.getlistaobras();
                     int cont = 0;
                     for (Obra obra : listadeobras) {
-                        if (!(obra.getCompraObra().isPagado())) {
-                            System.out.println("[" + cont + "]" + "nombre: " + obra.getTitulo() + " fecha de creacion: "+ obra.getFecha() + " precio: " + obra.getDimensiones());
+                        if (obra.getCompraObra().isPagado()==false) {
+                            System.out.println("[" + cont + "]" + " nombre: " + obra.getTitulo() + " Fecha de creacion: "+ obra.getFecha().get(Calendar.DAY_OF_WEEK)+"/"+obra.getFecha().get(Calendar.MONTH)+"/"+obra.getFecha().get(Calendar.YEAR)+ " precio: " + obra.getPrecioRef());
                             cont++;
                         }
                     }
@@ -48,27 +48,78 @@ public class PantallaGaleria {
                     break;
                 case 4:
                     try (Scanner modificarobra = new Scanner(System.in)) {
-                        galeria.leertxtyllenarobras(ruta);
                         System.out.print("Dame el codigo de la obra a modificar: ");
                         Long codigoobra = modificarobra.nextLong();
                         ArrayList<Obra> listaobras = new ArrayList<>();
+                        listaobras = galeria.getlistaobras();
                         for (Obra obra : listaobras) {
-                            if (!(obra.getCodigoObra() == codigoobra)) {
-                                System.out.println("no puedo modificar esa obra, no existe!");
-                            } else {
-                                try (Scanner nuevaentrada = new Scanner(System.in)) {
-                                    //System.out.print("Dame el codigo de la obra: ");
-                                    /*Long codigo = nuevaentrada.nextLong();
-                                    for (Obra obra2 : listaobras) {
+                            if (obra.getCodigoObra()==codigoobra) {
+                                try (Scanner quesemodifica = new Scanner(System.in)) {
+                                    System.out.println("Aqui esta lo que puedes modificar:");
 
-                                    }*/
+                                    System.out.println("1. codigo");
+                                    System.out.println("2. titulo");
+                                    System.out.println("3. dia de creacion");
+                                    System.out.println("4. mes de creacion");
+                                    System.out.println("5. anio de creacion");
+                                    System.out.println("6. precio");
+                                    System.out.println("7. alto");
+                                    System.out.println("8. ancho");
+                                    System.out.print("Qué quieres modificar?: ");
+                                    int opcionp4 = quesemodifica.nextInt();
+                                    switch (opcionp4) {
+                                        case 1:
+                                            System.out.print("Dame el nuevo codigo (debe ser algo como 000033, empieza en 0)");
+                                            Long newcode = quesemodifica.nextLong();
+                                            obra.setCodigoObra(newcode);
+                                            break;
+                                        case 2: 
+                                            System.out.print("dame el titulo: ");
+                                            String newtitle = quesemodifica.nextLine();
+                                            obra.setTitulo(newtitle);
+                                            break;
+                                        case 3:
+                                            System.out.print("dame el dia de creacion: ");
+                                            int newday = quesemodifica.nextInt();
+                                            obra.setFecha(newday, obra.getFecha().get(Calendar.MONTH), obra.getFecha().get(Calendar.YEAR));
+                                            break;
+                                        case 4:
+                                            System.out.print("dame el mes de creacion: ");
+                                            int newmonth = quesemodifica.nextInt();
+                                            obra.setFecha(obra.getFecha().get(Calendar.DAY_OF_MONTH), newmonth, obra.getFecha().get(Calendar.YEAR));
+                                            break;
+                                        case 5:
+                                            System.out.print("dame el anio de creacion: ");
+                                            int newyear = quesemodifica.nextInt();
+                                            obra.setFecha(obra.getFecha().get(Calendar.DAY_OF_MONTH), obra.getFecha().get(Calendar.MONTH), newyear);
+                                            break;
+                                        case 6:
+                                            System.out.print("dame el precio: ");
+                                            float newprice = quesemodifica.nextFloat();
+                                            obra.setPrecioRef(newprice);
+                                            break;
+                                        case 7:
+                                            System.out.print("dame el alto: ");
+                                            int newheigth = quesemodifica.nextInt();
+                                            obra.setPrecioRef(newheigth);
+                                            break;
+                                        case 8:
+                                            System.out.print("dame el alto: ");
+                                            int newwidth = quesemodifica.nextInt();
+                                            obra.setPrecioRef(newwidth);
+                                            break;
+                                        default:
+                                            break;
+                                    }
                                 } catch (NoSuchElementException e) {
-                                    System.out.println("no reconozco esa opcion");
+                                    System.out.println("no existe ese parametro");
                                 }
+                            } else {
+                                System.out.println("ese codigo no existe");
                             }
                         }
                     } catch (NoSuchElementException e) {
-                        System.out.println("no reconozco esa opcion");
+                        System.out.println("problema con la entrada");
                     }
                     break;
 
@@ -80,15 +131,16 @@ public class PantallaGaleria {
                     break;
 
                 case 6:
-                    int cont2 = 0;
-                    for (Cliente cliente : listadeclientes) {
-                        System.out.println("[" + cont2 + "]" + "Cedula: " + cliente.getCedula() + " Nombre completo: " + cliente.getNombre() + " " + cliente.getApellidos() + " Direccion: "+ cliente.getDireccionEntrega() + " Telefono: " + cliente.getTelefono());
-                        cont2++;
-                    }
-                    break;
-
-                case 7:
+                
                 break;
+                case 7:
+                int cont2 = 0;
+                for (Cliente cliente : listadeclientes) {
+                    System.out.println("[" + cont2 + "]" + "Cedula: " + cliente.getCedula() + " Nombre completo: " + cliente.getNombre() + " " + cliente.getApellidos() + " Direccion: "+ cliente.getDireccionEntrega() + " Telefono: " + cliente.getTelefono());
+                    cont2++;
+                }
+                break;
+                
 
                 case 8:
                 break;
@@ -186,9 +238,11 @@ public class PantallaGaleria {
 
                 break;
 
-*/
+ */
 
                 case 10:
+                    
+                    
                 break;
 
                 case 11:
@@ -209,18 +263,23 @@ public class PantallaGaleria {
                     
                 break;
                 */
+                
+                case 14:
+
+              
+
+                break;
                 } //switch
                 
                 
 
                
-            }//try general
+            }//switch general
             catch(NoSuchElementException e){
             System.out.println("problema con elemento");
             }
-        }//main
-        
-        
-        
-}//clase
+            
+        }//try general
+    } //main   
+
 

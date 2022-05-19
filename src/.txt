@@ -217,6 +217,72 @@ Punto 9
 
 punto 10
 
+//////Eliminar cliente 
+    public static void EliminarCliente( List<cliente> listadeclientes) throws Exception {
+        int codigo;
+        System.out.println("Ingresa el codigo del cliente a eliminar ");
+        for (int i = 0; i < listadeclientes.size(); i++) {
+            if (codigo==listadeclientes.get(i).getCodigoCliente()) {
+                System.out.println("El codigo ingresado existe ");
+            } else {
+                throw new Exception();
+            }
+        }
+        String confirm;
+        for (int i = 0; i < listadeclientes.size(); i++) {
+            if (CodigoCliente==codigo) {
+                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
+                try (Scanner scanner= new Scanner(System.in)){
+                    System.out.println("desea eliminar el codigo? yes/not");
+                    confirm=scanner.next();
+                    if (confirm=="yes") {
+                        System.out.println("El cliente fue eliminado con éxito: ");
+                    } else {
+                        System.out.println("Hubo un fallo al eliminar el cliente, revisa bien lo datos");
+                    }
+                } catch (Exception e) {
+                   
+                }
+            } else {
+                System.out.println("Verifique el código ingresado :)");
+            }
+        }
+       
+
+    }
+//Eliminar Compra Obra/
+    public static void EliminarCompraObra(List<Obra> listadeobrascompra) throws Exception {
+        int codigo1; 
+        System.out.println("Ingresa el codigo de la compra a eliminar ");
+        for (int i = 0; i < listadeobrascompra.size(); i++) {
+            if (codigo1==listadeobrascompra.get(i).getCodigoCompra()) {
+                System.out.println("Niceee, el codigo ingresado existe ");
+            } else {
+                throw new Exception();
+            }
+        }
+        String confirm;
+        for (int i = 0; i < listadeobrascompra.size(); i++) {
+            if (codigoCompra==codigo1) {
+                System.out.println("El codigo se ha encontrado y procederá a eliminarse: ");
+                try (Scanner scanner= new Scanner(System.in)){
+                    System.out.println("desea eliminar el codigo? yes/not");
+                    confirm=scanner.next();
+                    if (confirm=="yes") {
+                        System.out.println("La compra fue eliminada con éxito: ");
+                    } else {
+                        System.out.println("Hubo un fallo al eliminar la compra, revisa bien lo datos");
+                    }
+                } catch (Exception e) {
+                   
+                }
+            } else {
+                System.out.println("Verifique el código ingresado :)");
+            }
+        }
+       
+
+    }
 
 
 
@@ -337,7 +403,7 @@ punto 10
                      GestionObras buscarobra= new GestionObras();
                      List<Obra> listaobra=new ArrayList<>();
                      List<Artista> buscarartista=new ArrayList<>();
-                     listaobra=buscarobra,crearobras();
+                     listaobra=buscarobra.crearobras();
                      buscarartista=buscarobra.crearartistas();
                     try(Scanner criterio = new Scanner(System.in)){
                         int opc=0
@@ -414,24 +480,66 @@ System.out.println("Sorry la obra no existe o un codigo quedó mal escrito ");
                 
 //............................................................................................................................//
 
-Punto8//......................................................................................................................//
+
+
+
+
+Punto11//......................................................................................................................//
 
 try{
      Compra compraCliente;
 
      long cedula2, telefono2;
 
-    String nombre2, apellidos2, direccionEntrega2,codigoCliente2;
-
+    String nombre2, apellidos2, direccionEntrega2,codigoCliente2, codigoObra2, codigoCompra2;
+    Calendar fechaCompra2= Calendar.getInstans();
+    Boolean pagado2;
    GestionClientes administrarCliente=new GestionClientes();
 
     Cliente nuevoCliente;
+    Obra nuevaObra;
 
     System.out.println("Dame el codigo del cliente que quieres insertar");
+    codigoCliente2=Scanner.nextLine();
 
-    codigoCliente=Scanner.nextLine();
+    System.out.println("Dame el codigo de la obra que quieres insertar");
+    codigoObra2=Scanner.nextLine();
 
-    Sytem.out.println("Dame el nombre del cliente: ");
+    System.out.println("Dame el codigo de la compra:");
+    codigoCompra=Scanner.nextLine();
+
+    Sytem.out.println("Dame la fecha de la compra anio/mes/dia: ");
+    fechaCompra2.set(anio, mes, dia);
+
+    System.out.printl("pagaste el producto?: true/false");
+    pagado=Scanner.nextBoolean();
+    List<Compra>lcompra=new ArrayList<Compra>();
+
+    codigoCliente2=administrarCliente.crearClientes();
+
+    for(int i=0;i<lcompra.size();i++){
+        
+        if(lcompra.get(i).getCodigoCompra()==codigoCompra2 &&lcompra.get(i).getFechaCompra()==fechaCompra2.YEAR && lcompra.get(i).getFechaCompra()==fechaCompra2.MONTH && lcompra.get(i).getFechaCompra()==fechaCompra2.DATE && lcompra.get(i).getPagado()==true ){
+            System.out.println("La compra ya existe ");
+        }else{
+                System.out.println("La compra no se ha hecho");
+            compraCliente=new Compra(long codigoCompra,int dia, int mes, int anio, boolean pagado);
+
+        }
+
+    }
+
+
+}catch(Excepcion e){
+    System.out.println("Resivisa los datos ingresados");
+}
+
+
+
+
+/********************cosas aparte****************************
+
+Sytem.out.println("Dame el nombre del cliente: ");
 
     nombre2=Scanner.nextLine();
 
@@ -451,24 +559,40 @@ try{
 
     telefono2=Scanner.nextLong();
 
-    List<Cliente>lcliente=new ArrayList<>();
-
-    codigoCliente2=administrarCliente.crearClientes();
-
-    for(int i=0;i<lcliente.size();i++){
-        
-        if(codigoCliente2==codigo){
+*************************************************/
 
 
-        }else{
 
+                
+//............................................................................................................................//
+
+
+
+
+
+Punto 8//.....................................................................................................................//
+
+try{
+
+Long codModificar
+
+System.out.println("Pasame el codigo del lcliente que deseas modificar: ");
+codModificar=scanner.nextLong();
+
+if(codModificar!=codigo){
+System.out.println("El codigo no existe :( crea uno primero");
+
+}
+    else{
+        for(int i=0; i<listadeclientes.size();i++){
+            listadeclientes.get(i);
         }
-
     }
 
 
-}catch(Excepcion e){
 
+}catch(Exception e){
+System.out.println("algo salio mal con el codigo revisalo e intenta de nuevo");
 }
 
 
@@ -476,5 +600,61 @@ try{
 
 
 
-                
-//............................................................................................................................//
+
+
+
+
+//..............................................................................................................................//
+
+
+Punto 14//.....................................................................................................................//
+
+int year, month;
+
+Compra listaVerCompras=new GestionClientes();
+
+List<Compra>ListaImprimir=new ArrayList<>();
+
+
+System.out.println("En que anio hiciste la compra?");
+year=scanner.nextInt();
+
+System.out.println("En que mes hiciste la compra?");
+month=scanner.nextInt();
+
+
+  for (int i=0; i<ListaImprimir.size();i++){
+      if(ListaImprimir.get(i).getFechaCompra().YEAR==year&&ListaImprimir.get(i).getFechaCompra().MONTH==month){
+           System.out.println("["+i+"]"+"listado de obras: "+ListaImprimir().get(i)+"Cliente que la compro: "+listadeclientes().get(i)+"fecha de compra: "+listaVerCompras().get(i));
+      }
+      else{
+          Sytem.out.println("No coinciden las fechas ingresadas con la compra, verifique y vuelva a intentar");
+      }
+      
+  } 
+                    
+    
+
+
+
+
+
+
+
+
+//..............................................................................................................................//
+
+
+Punto 15//.....................................................................................................................//
+
+
+
+
+
+
+
+
+
+
+
+//..............................................................................................................................//

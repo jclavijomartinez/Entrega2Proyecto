@@ -12,27 +12,33 @@ public class ControlGaleria {
     GestionObras gestionobras = new GestionObras();
     // dato de tipo gestionclientes para acceder a la creacion de clientes
     GestionClientes gestionClientes = new GestionClientes();
-    // leer los datos del txt y agregarlos a la obra
-    GestionClientes gesticlientes = new GestionClientes();
     public void leertxtyllenarobras(String ruta) {
         File entradatxt = new File(ruta);
         try (FileReader fr = new FileReader(ruta)) {
             try (Scanner lectura = new Scanner(entradatxt)) {
                 BufferedReader bf =new BufferedReader(fr);
                 Long cantlin = bf.lines().count();
+                lectura.nextLine();//linea de inicio
+                listaDeObras.clear(); //limpieza de las listas, para que no acumulen basura
+                listaDeArtistas.clear();
+                listaDeClientes.clear();//fin limpieza
                 for (int i = 1; i < cantlin; i++) { 
                     String[] datos =lectura.nextLine().split(" - ");
                     char primerdig = datos[0].charAt(0);
                     if (primerdig == '0') {
-                        List<Artista> testlist;
-                        //float,String,long,int, int, int,
-                        Obra nuevaObra = new Obra(Long.parseLong(datos[0]), datos[1],Integer.parseInt(datos[2]) ,Integer.parseInt(datos[3]),Integer.parseInt(datos[4]),datos[5],datos[6],datos[7],Integer.parseInt(datos[7]),Integer.parseInt(datos[8]),Boolean.parseBoolean(datos[9]) ,testlist);
+                        List<Artista> testlist = new ArrayList<>();
+                        Obra nuevaObra = new Obra(Long.parseLong(datos[0]),datos[1],Integer.parseInt(datos[2]),Integer.parseInt(datos[3]),Integer.parseInt(datos[4]),Float.parseFloat(datos[5]),Integer.parseInt(datos[6]),Integer.parseInt(datos[7]),Long.parseLong(datos[8]),Integer.parseInt(datos[9]),Integer.parseInt(datos[10]),Integer.parseInt(datos[11]),Boolean.parseBoolean(datos[12]),testlist);
                         this.agregarObra(nuevaObra);
                     } else if(primerdig == '1') {
+                        List<Obra> testlist = new ArrayList<>();
+                        //String codigoArtista, long cedula, String nombre, String apellido,int dia,int mes,int anio, long telefono,List<Obra> listaobras
+                        Artista newArtista = new Artista(datos[0], Long.parseLong(datos[1]), datos[2], datos[3],Integer.parseInt(datos[4]),Integer.parseInt(datos[5]),Integer.parseInt(datos[6]),Long.parseLong(datos[7]), testlist);
+                        this.agregarArtista(newArtista);
                     } else if(primerdig == '2') {
-                    } else if(primerdig == '3') {
-                        
-                    } 
+                        //String codigoCliente,long cedula,String nombre,String apellidos,String direccionEntrega,long telefono
+                        Cliente nuevoCliente = new Cliente(datos[0], Long.parseLong(datos[1]),datos[2] , datos[3], datos[4],Long.parseLong(datos[5]));
+                        this.agregarClientes(nuevoCliente);
+                    }
                 }
             } catch (FileNotFoundException e) { //excepcion del scanner
                 System.out.println("el archivo no existe revisa");
@@ -55,18 +61,5 @@ public class ControlGaleria {
     }
     public ArrayList<Artista> getlistaartistas() {
         return listaDeArtistas;
-    }
-    public void llenarobras(String[] DATA) {
-        //recibir el string[] y procesar con los códigos para comparar y llenar las listas
-    }
-    public void escribirEnArchivo(String ruta) {
-        File entradatxt = new File(ruta);
-        try (FileWriter fw = new FileWriter(entradatxt)) {
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw);
-            out.println("texto");
-        } catch (IOException e) {
-            System.out.println("problema al usar el archivo, revisa");
-        }
     }
 }
